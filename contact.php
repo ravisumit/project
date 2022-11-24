@@ -35,7 +35,7 @@
 				<p>508-882-3174
 				<br/>508-882-3914</p>
 			<h3>Contact</h3>
-				<form action = "contact.php" method = "POST" id="myForm">
+				<form id="myForm">
 					<p><label>Company Name:</label>
 					<input type="text" name="company_name"/></p>
 					<p><label>First Name:</label>
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 	
 $sql = "INSERT INTO contact_details (company_name, first_name, last_name, phone, email)
-VALUES ('$company_name', '$irst_name', '$last_name', $phone, $email)";
+VALUES ('$company_name', '$irst_name', '$last_name', $phone, '$email')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
